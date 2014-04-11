@@ -1,0 +1,54 @@
+description = 'Set of Machine Learning algorithms and tests to demostrate usage with R and Python'
+
+allprojects {
+    group = 'com.lambda.ml'
+
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'maven'
+
+    version = '1.0'
+
+    repositories {
+        maven { url "file:${rootDir}/maven-local-repo" }
+        mavenCentral()
+        mavenLocal()
+    }
+
+    compileJava {
+        sourceCompatibility = 1.7
+        targetCompatibility = 1.7
+    }
+
+    dependencies {
+        compile "ch.qos.logback:logback-classic:$logbackVersion"
+        testCompile "junit:junit:$junitVersion"
+    }
+}
+
+
+project(':core:pmml'){
+    description = 'JPMML test examples and util classes'
+
+    dependencies {
+        compile "org.jpmml:pmml-model:$jpmmlVersion"
+        compile "org.jpmml:pmml-schema:$jpmmlVersion"
+        compile "org.jpmml:pmml-evaluator:$jpmmlEvalVersion"
+
+        testCompile "junit:junit:$junitVersion"
+    }
+}
+
+
+/*
+
+    sourceSets.test.resources.srcDir project(':pmml').file('test/resources')
+*/
+
+sourceSets {
+    test {
+        resources {
+            srcDir "resources"
+        }
+    }
+}
