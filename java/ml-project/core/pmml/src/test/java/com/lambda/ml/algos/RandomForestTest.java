@@ -31,7 +31,7 @@ public class RandomForestTest {
 
     final static String pmmlFile = "iris-randomforest-prediction.xml";
 
-    // Headers: "","whole_weight","diameter","rings","length","height"
+    // Headers: sepal length,sepal width,petal length,petal width,species
     final static String testCSVFile = "test_iris.csv";
     final static String cvsSplitBy = ",";
 
@@ -129,9 +129,11 @@ public class RandomForestTest {
                 DefaultClassificationMap<String> predicatedLabel = (DefaultClassificationMap)results.get( evaluator.getTargetField());
 
 
+               System.out.println("\nPredication");
                for(String key : predicatedLabel.keySet() ){
                    System.out.println(String.format("Predicated species [ %s --> %f ]  - Expected species [ %s ]", key, predicatedLabel.getProbability(key), expectedSpecies ));
                }
+
             }
 
             System.out.println(String.format("Predicted %d items in %dms", predications, System.currentTimeMillis() - startTime));
