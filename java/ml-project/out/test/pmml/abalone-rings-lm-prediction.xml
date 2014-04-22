@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PMML version="4.1" xmlns="http://www.dmg.org/PMML-4_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dmg.org/PMML-4_1 http://www.dmg.org/v4-1/pmml-4-1.xsd">
+ <Header copyright="Copyright (c) 2014 lyndonadams" description="Linear Regression Model">
+  <Extension name="user" value="lyndonadams" extender="RR/PMML"/>
+  <Application name="RR/PMML" version="1.4"/>
+  <Timestamp>2014-03-31 23:49:33</Timestamp>
+ </Header>
+ <DataDictionary numberOfFields="2">
+  <DataField name="rings" optype="continuous" dataType="double"/>
+  <DataField name="diameter" optype="continuous" dataType="double"/>
+ </DataDictionary>
+ <RegressionModel modelName="AbaloneRingsPredictionLM" functionName="regression" algorithmName="least squares">
+  <MiningSchema>
+   <MiningField name="rings" usageType="predicted"/>
+   <MiningField name="diameter" usageType="active"/>
+  </MiningSchema>
+  <Output>
+   <OutputField name="Predicted_rings" feature="predictedValue"/>
+  </Output>
+  <RegressionTable intercept="1.28406058179894">
+   <NumericPredictor name="diameter" exponent="1" coefficient="0.761835207591164"/>
+  </RegressionTable>
+ </RegressionModel>
+</PMML>

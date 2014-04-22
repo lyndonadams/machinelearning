@@ -1,5 +1,6 @@
-package com.lambda.ml.jpmml;
+package com.lambda.ml.algos;
 
+import com.lambda.ml.jpmml.JPMMLUtils;
 import org.dmg.pmml.FieldName;
 import org.jpmml.evaluator.FieldValue;
 import org.dmg.pmml.Model;
@@ -62,7 +63,7 @@ public class LinearRegressionTest {
     @Test
     public void loadPMMLModel() throws Exception {
 
-        PMML pmml = JPMMLUtils.loadModel( pmmlFilePath );
+        PMML pmml = JPMMLUtils.loadModel(pmmlFilePath);
 
         // Did we get a pmml model.
         assertNotNull(pmml);

@@ -1,4 +1,9 @@
+apply plugin: 'build-dashboard'
+apply plugin: 'sonar-runner'
+
 description = 'Set of Machine Learning algorithms and tests to demostrate usage with R and Python'
+
+
 
 allprojects {
     group = 'com.lambda.ml'
@@ -6,6 +11,7 @@ allprojects {
     apply plugin: 'idea'
     apply plugin: 'java'
     apply plugin: 'maven'
+    apply plugin: 'jacoco'
 
     version = '1.0'
 
@@ -23,6 +29,14 @@ allprojects {
     dependencies {
         compile "ch.qos.logback:logback-classic:$logbackVersion"
         testCompile "junit:junit:$junitVersion"
+    }
+
+
+    build.mustRunAfter rootProject.buildDashboard
+    check.finalizedBy jacocoTestReport
+
+    jacocoTestReport.doLast {
+        println "JaCoCo Coverage Report  : ${reports.html.destination}/index.html"
     }
 }
 
@@ -50,5 +64,13 @@ sourceSets {
         resources {
             srcDir "resources"
         }
+    }
+}
+
+sonarRunner {
+    sonarProperties {
+        property "sonar.junit.reportsPath", "build/test-results"
+        property "sonar.jacoco.reportPath", "build/jacoco/test.exec"
+        property "sonar.jacoco.itReportPath", "build/jacoco/integTest.exec"
     }
 }
