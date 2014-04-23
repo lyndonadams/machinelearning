@@ -27,16 +27,16 @@ import static junit.framework.TestCase.assertNotNull;
  */
 public class RandomForestTest {
 
-    final static String modelName = "IrisPredictionRForest";
+    private static final String modelName = "IrisPredictionRForest";
 
-    final static String pmmlFile = "iris-randomforest-prediction.xml";
+    private static final String pmmlFile = "iris-randomforest-prediction.xml";
 
     // Headers: sepal length,sepal width,petal length,petal width,species
-    final static String testCSVFile = "test_iris.csv";
-    final static String cvsSplitBy = ",";
+    private static final String testCSVFile = "test_iris.csv";
+    private final static String cvsSplitBy = ",";
 
-    static String pmmlFilePath;
-    static String csvFilePath;
+    private static String pmmlFilePath;
+    private static String csvFilePath;
 
     /**
      * Lets find the file from the classpath since we put the required files on to ths classpath for ease of testing.
@@ -135,7 +135,6 @@ public class RandomForestTest {
                }
 
             }
-
             System.out.println(String.format("Predicted %d items in %dms", predications, System.currentTimeMillis() - startTime));
 
         }
