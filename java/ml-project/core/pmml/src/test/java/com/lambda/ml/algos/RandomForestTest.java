@@ -53,12 +53,12 @@ public class RandomForestTest {
     }
 
     /**
-     *
+     * Load Random Forest PMML model.
      *
      * @throws Exception
      */
     @Test
-    public void loadPMMLModel() throws Exception {
+    public void loadRandomForestPMMLModel() throws Exception {
 
         PMML pmml = JPMMLUtils.loadModel(pmmlFilePath);
 
@@ -106,26 +106,24 @@ public class RandomForestTest {
                 predications++;
                 String[] tokens = line.split( cvsSplitBy );
 
-
+                // Extract required features from csv row
                 Double[] pfeatures = {
                         Double.valueOf( tokens[0] ),
-                        Double.valueOf( tokens[1] ) ,
+                        Double.valueOf( tokens[1] ),
                         Double.valueOf( tokens[2] ),
                         Double.valueOf( tokens[3] )
                 };
 
+                // Extract the actual target label
                 String expectedSpecies = tokens[4];
 
-                for(int i=0; i<4;i++){
-                    FieldName fieldName = requiredModelFeatures.get(i);
+                // Build feature set
+                features = JPMMLUtils.buildFeatureSet( evaluator, requiredModelFeatures, pfeatures);
 
-                    FieldValue value = evaluator.prepare(fieldName, pfeatures[i]);
-                    features.put( fieldName, value );
-                }
-
+                // Execute the prediction
                 Map<FieldName, ?> results = evaluator.evaluate( features );
 
-                // Convert back to original ring value so the prediction become meaningful.
+                // Get the set of prediction responses
                 DefaultClassificationMap<String> predicatedLabel = (DefaultClassificationMap)results.get( evaluator.getTargetField());
 
 
