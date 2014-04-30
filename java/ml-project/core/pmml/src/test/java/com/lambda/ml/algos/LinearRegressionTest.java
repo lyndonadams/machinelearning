@@ -23,20 +23,20 @@ import java.util.Map;
 import static junit.framework.TestCase.assertNotNull;
 
 /**
- * Linear regression test for
+ * Linear regression test to predict the number ring a abalone would have from a selected feature set.
  *
  * @author Lyndon Adams
  * @since  Apr, 2014
  */
 public class LinearRegressionTest {
 
-    final static String modelName = "AbaloneRingsPredictionLM";
+    static final String modelName = "AbaloneRingsPredictionLM";
 
-    final static String pmmlFile = "abalone-rings-lm-prediction.xml";
+    static final String pmmlFile = "abalone-rings-lm-prediction.xml";
 
     // Headers: "","whole_weight","diameter","rings","length","height"
-    final static String testCSVFile = "test_abalone.csv";
-    final static String cvsSplitBy = ",";
+    static final String testCSVFile = "test_abalone.csv";
+    static final String cvsSplitBy = ",";
 
     static String pmmlFilePath;
     static String csvFilePath;

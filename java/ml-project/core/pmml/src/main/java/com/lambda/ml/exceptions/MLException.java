@@ -1,11 +1,9 @@
 package com.lambda.ml.exceptions;
 
 /**
- * Created with IntelliJ IDEA.
- * User: lyndonadams
- * Date: 16/04/2014
- * Time: 00:49
- * To change this template use File | Settings | File Templates.
+ * Simple ML exception class.
+ *
+ * @author Lyndon Adams
  */
 public class MLException extends Exception {
     public MLException() {

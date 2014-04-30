@@ -1,3 +1,5 @@
+# Unstructured learning
+
 require(pmml)  # for storing the model in pmml
 require(class) # Load the class package that holds the kmeans() function
 require(ggplot2)

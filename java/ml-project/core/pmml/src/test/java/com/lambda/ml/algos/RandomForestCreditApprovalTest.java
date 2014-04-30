@@ -20,19 +20,19 @@ import java.util.Map;
 import static junit.framework.TestCase.assertNotNull;
 
 /**
- * Random forest iris prediction test.
+ * Random forest credit approval prediction test.
  *
  * @author Lyndon Adams
  * @since  Apr, 2014
  */
-public class RandomForestTest {
+public class RandomForestCreditApprovalTest {
 
-    private static final String modelName = "IrisPredictionRForest";
+    private static final String modelName = "CreditAppPredictionRForest";
 
-    private static final String pmmlFile = "iris-randomforest-prediction.xml";
+    private static final String pmmlFile = "creditapp-randomforest-prediction.xml";
 
-    // Headers: sepal length,sepal width,petal length,petal width,species
-    private static final String testCSVFile = "test_iris.csv";
+    // "V6","V8","V9","V10","V11","V15","V16"
+    private static final String testCSVFile = "test_creditapp.csv";
     private final static String cvsSplitBy = ",";
 
     private static String pmmlFilePath;
@@ -78,13 +78,13 @@ public class RandomForestTest {
      * @throws Exception
      */
     @Test
-    public void predictSpecies() throws Exception {
+    public void predictCreditApproval() throws Exception {
 
         PMML pmml = JPMMLUtils.loadModel( pmmlFilePath );
         PMMLManager mgr = new PMMLManager( pmml );
 
         ModelEvaluator<?> modelEvaluator = (ModelEvaluator<?>) mgr.getModelManager(modelName, ModelEvaluatorFactory.getInstance());
-        Evaluator evaluator = modelEvaluator;
+        MiningModelEvaluator evaluator = (MiningModelEvaluator)modelEvaluator;
 
         // Get the list of required feature set model needs to predict.
         List<FieldName> requiredModelFeatures = evaluator.getActiveFields();
@@ -107,15 +107,17 @@ public class RandomForestTest {
                 String[] tokens = line.split( cvsSplitBy );
 
                 // Extract required features from csv row
-                Double[] pfeatures = {
-                        Double.valueOf( tokens[0] ),
+                Object[] pfeatures = {
+                        tokens[0],
                         Double.valueOf( tokens[1] ),
-                        Double.valueOf( tokens[2] ),
-                        Double.valueOf( tokens[3] )
+                        tokens[2],
+                        tokens[3],
+                        Double.valueOf( tokens[ 4]),
+                        Double.valueOf( tokens[ 5])
                 };
 
                 // Extract the actual target label
-                String expectedSpecies = tokens[4];
+                String expectedSpecies = tokens[6];
 
                 // Build feature set
                 features = JPMMLUtils.buildFeatureSet( evaluator, requiredModelFeatures, pfeatures);
@@ -129,7 +131,7 @@ public class RandomForestTest {
 
                System.out.println("\nPredication");
                for(String key : predicatedLabel.keySet() ){
-                   System.out.println(String.format("Predicated species [ %s --> %f ]  - Expected species [ %s ]", key, predicatedLabel.getProbability(key), expectedSpecies ));
+                   System.out.println(String.format("Credit Approval  [ %s --> %f ]  - Expected answer [ %s ]", key, predicatedLabel.getProbability(key), expectedSpecies ));
                }
 
             }
@@ -137,5 +139,4 @@ public class RandomForestTest {
 
         }
     }
-
 }

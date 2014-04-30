@@ -1,6 +1,7 @@
+# Structured learning
 require(pmml)  # for storing the model in xml
 require(class) # Load the class package that holds the knn() function
-library(ggplot2)
+require(ggplot2)
 
 # Load the data and keep the column headers
 iris <- read.table("../data/iris.csv",sep=",", header=TRUE)
@@ -27,24 +28,28 @@ randomRows = function(df,n){
 iris <- randomRows( iris, sizeOfData)
 
 # Select the feature space to minimise the data set
-features <- c( "sepal.width","sepal.length", "petal.length", "petal.width")
-iris <- iris[ features ]
+# features <- c( "sepal.width","sepal.length", "petal.length", "petal.width")
+# iris <- iris[ features ]
 
 # Now scale the features dependent on there importance for there prediction
 
 # Now split the dataset in to train 20%  and test 33%
-indexes <- sample(1:sizeOfData, size=0.2*sizeOfData)
-test <- randomRows( iris, sizeOfData)
-train <- randomRows( iris, sizeOfData)
+indexes <- sample(1:sizeOfData, size=0.5*sizeOfData)
+test <- iris[indexes,]
+train <- iris[-indexes,]
+
+u <-unique( train$species )
+
+
 
 # Assign training labels as factors
-trainingLabels <- factor( c( rep("Iris-setosa", 50), rep("Iris-versicolor", 50), rep("Iris-virginica", 50)) )
+trainingLabels <- factor( c( rep("Iris-setosa", ), rep("Iris-versicolor", ), rep("Iris-virginica", )) )
 
 # Validate training labels as numeric values
 as.numeric( trainingLabels)
 
 # Set the number of nearest neighbours for a point
-nearestNeighbours <- 3
+nearestNeighbours <- 5
 
 knnModel <- knn(train, test, trainingLabels, k = nearestNeighbours, prob=TRUE, use.all=FALSE)
 attributes(.Last.value)
@@ -54,8 +59,8 @@ summary( knnModel )
 
 # Export the resulting model as PMML file.
 # THIS IS NOT CURRENTLY SUPPORTED
-localfilename <- "../models/iris-knn-prediction.xml"
-saveXML(pmml( knnModel, model.name = "IrisPredictionKNN", app.name = "RR/PMML", dataset = dataset) , file = localfilename)
+# localfilename <- "../models/iris-knn-prediction.xml"
+# saveXML(pmml( knnModel, model.name = "IrisPredictionKNN", app.name = "RR/PMML", dataset = dataset) , file = localfilename)
 
 
 

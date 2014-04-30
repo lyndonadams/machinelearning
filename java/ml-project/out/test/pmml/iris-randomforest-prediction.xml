@@ -3,7 +3,7 @@
  <Header copyright="Copyright (c) 2014 lyndonadams" description="Random Forest Tree Model">
   <Extension name="user" value="lyndonadams" extender="RR/PMML"/>
   <Application name="RR/PMML" version="1.4"/>
-  <Timestamp>2014-04-23 23:37:05</Timestamp>
+  <Timestamp>2014-04-25 23:01:46</Timestamp>
  </Header>
  <DataDictionary numberOfFields="5">
   <DataField name="species" optype="categorical" dataType="string">
@@ -44,50 +44,44 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.8"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.width" operator="greaterThan" value="0.8"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
        <Node id="4">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-        <Node id="6">
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
+        <Node id="6" score="Iris-versicolor">
          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
-         <Node id="10" score="Iris-virginica">
-          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="4.95"/>
-         </Node>
-         <Node id="11" score="Iris-versicolor">
-          <SimplePredicate field="sepal.length" operator="greaterThan" value="4.95"/>
-         </Node>
         </Node>
         <Node id="7">
          <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
-         <Node id="12" score="Iris-virginica">
+         <Node id="10" score="Iris-virginica">
           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
          </Node>
-         <Node id="13">
+         <Node id="11">
           <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
-          <Node id="16" score="Iris-versicolor">
-           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.95"/>
+          <Node id="14" score="Iris-versicolor">
+           <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.45"/>
           </Node>
-          <Node id="17" score="Iris-virginica">
-           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.95"/>
+          <Node id="15" score="Iris-virginica">
+           <SimplePredicate field="petal.length" operator="greaterThan" value="5.45"/>
           </Node>
          </Node>
         </Node>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
+        <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
         <Node id="8">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
-         <Node id="14" score="Iris-versicolor">
-          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.05"/>
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.05"/>
+         <Node id="12" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
          </Node>
-         <Node id="15" score="Iris-virginica">
-          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.05"/>
+         <Node id="13" score="Iris-versicolor">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
          </Node>
         </Node>
         <Node id="9" score="Iris-virginica">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
+         <SimplePredicate field="petal.length" operator="greaterThan" value="5.05"/>
         </Node>
        </Node>
       </Node>
@@ -107,56 +101,26 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.45"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
-       <Node id="4">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
-        <Node id="6">
-         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="4.95"/>
-         <Node id="10" score="Iris-versicolor">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="3.9"/>
-         </Node>
-         <Node id="11" score="Iris-virginica">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="3.9"/>
-         </Node>
-        </Node>
-        <Node id="7">
-         <SimplePredicate field="sepal.length" operator="greaterThan" value="4.95"/>
-         <Node id="12" score="Iris-versicolor">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
-         </Node>
-         <Node id="13">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-          <Node id="16">
-           <SimplePredicate field="sepal.width" operator="lessOrEqual" value="3.1"/>
-           <Node id="18" score="Iris-virginica">
-            <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
-           </Node>
-           <Node id="19" score="Iris-versicolor">
-            <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
-           </Node>
-          </Node>
-          <Node id="17" score="Iris-versicolor">
-           <SimplePredicate field="sepal.width" operator="greaterThan" value="3.1"/>
-          </Node>
-         </Node>
-        </Node>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
+       <Node id="4" score="Iris-versicolor">
+        <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.75"/>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
-        <Node id="8">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
-         <Node id="14" score="Iris-virginica">
-          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
+        <SimplePredicate field="sepal.length" operator="greaterThan" value="5.75"/>
+        <Node id="6">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
+         <Node id="8" score="Iris-versicolor">
+          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.7"/>
          </Node>
-         <Node id="15" score="Iris-versicolor">
-          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
+         <Node id="9" score="Iris-virginica">
+          <SimplePredicate field="petal.width" operator="greaterThan" value="1.7"/>
          </Node>
         </Node>
-        <Node id="9" score="Iris-virginica">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
         </Node>
        </Node>
       </Node>
@@ -176,27 +140,51 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.45"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
        <Node id="4">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
         <Node id="6" score="Iris-versicolor">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.35"/>
         </Node>
         <Node id="7">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-         <Node id="8" score="Iris-versicolor">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.35"/>
+         <Node id="8">
+          <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.05"/>
+          <Node id="10" score="Iris-virginica">
+           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.05"/>
+          </Node>
+          <Node id="11">
+           <SimplePredicate field="sepal.length" operator="greaterThan" value="5.05"/>
+           <Node id="14">
+            <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.05"/>
+            <Node id="16" score="Iris-versicolor">
+             <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
+            </Node>
+            <Node id="17" score="Iris-virginica">
+             <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
+            </Node>
+           </Node>
+           <Node id="15" score="Iris-versicolor">
+            <SimplePredicate field="sepal.length" operator="greaterThan" value="6.05"/>
+           </Node>
+          </Node>
          </Node>
-         <Node id="9" score="Iris-virginica">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
+         <Node id="9">
+          <SimplePredicate field="petal.length" operator="greaterThan" value="5.05"/>
+          <Node id="12" score="Iris-virginica">
+           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
+          </Node>
+          <Node id="13" score="Iris-versicolor">
+           <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
+          </Node>
          </Node>
         </Node>
        </Node>
        <Node id="5" score="Iris-virginica">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
+        <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
        </Node>
       </Node>
      </Node>
@@ -214,40 +202,46 @@
      </MiningSchema>
      <Node id="1">
       <True/>
-      <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.45"/>
+      <Node id="2">
+       <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.45"/>
+       <Node id="4">
+        <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.8"/>
+        <Node id="8" score="Iris-setosa">
+         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="4.7"/>
+        </Node>
+        <Node id="9">
+         <SimplePredicate field="sepal.length" operator="greaterThan" value="4.7"/>
+         <Node id="12" score="Iris-versicolor">
+          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
+         </Node>
+         <Node id="13" score="Iris-virginica">
+          <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
+         </Node>
+        </Node>
+       </Node>
+       <Node id="5" score="Iris-setosa">
+        <SimplePredicate field="sepal.width" operator="greaterThan" value="2.8"/>
+       </Node>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
-       <Node id="4" score="Iris-versicolor">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
+       <SimplePredicate field="sepal.length" operator="greaterThan" value="5.45"/>
+       <Node id="6">
+        <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.05"/>
+        <Node id="10">
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
+         <Node id="14" score="Iris-setosa">
+          <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.65"/>
+         </Node>
+         <Node id="15" score="Iris-versicolor">
+          <SimplePredicate field="petal.width" operator="greaterThan" value="0.65"/>
+         </Node>
+        </Node>
+        <Node id="11" score="Iris-virginica">
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
+        </Node>
        </Node>
-       <Node id="5">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
-        <Node id="6">
-         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.7"/>
-         <Node id="8">
-          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.2"/>
-          <Node id="10" score="Iris-virginica">
-           <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.05"/>
-          </Node>
-          <Node id="11">
-           <SimplePredicate field="petal.length" operator="greaterThan" value="5.05"/>
-           <Node id="12" score="Iris-virginica">
-            <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.5"/>
-           </Node>
-           <Node id="13" score="Iris-versicolor">
-            <SimplePredicate field="petal.width" operator="greaterThan" value="1.5"/>
-           </Node>
-          </Node>
-         </Node>
-         <Node id="9" score="Iris-versicolor">
-          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.2"/>
-         </Node>
-        </Node>
-        <Node id="7" score="Iris-virginica">
-         <SimplePredicate field="petal.width" operator="greaterThan" value="1.7"/>
-        </Node>
+       <Node id="7" score="Iris-virginica">
+        <SimplePredicate field="petal.length" operator="greaterThan" value="5.05"/>
        </Node>
       </Node>
      </Node>
@@ -266,33 +260,33 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.45"/>
+       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.6"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
-       <Node id="4" score="Iris-versicolor">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
-       </Node>
-       <Node id="5">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-        <Node id="6">
+       <SimplePredicate field="petal.length" operator="greaterThan" value="2.6"/>
+       <Node id="4">
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
+        <Node id="6" score="Iris-versicolor">
          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
-         <Node id="8" score="Iris-versicolor">
-          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.6"/>
-         </Node>
-         <Node id="9">
-          <SimplePredicate field="sepal.width" operator="greaterThan" value="2.6"/>
+        </Node>
+        <Node id="7">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
+         <Node id="8">
+          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.75"/>
           <Node id="10" score="Iris-virginica">
-           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.55"/>
+           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
           </Node>
           <Node id="11" score="Iris-versicolor">
-           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.55"/>
+           <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
           </Node>
          </Node>
+         <Node id="9" score="Iris-virginica">
+          <SimplePredicate field="sepal.width" operator="greaterThan" value="2.75"/>
+         </Node>
         </Node>
-        <Node id="7" score="Iris-virginica">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
-        </Node>
+       </Node>
+       <Node id="5" score="Iris-virginica">
+        <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
        </Node>
       </Node>
      </Node>
@@ -316,47 +310,29 @@
       <Node id="3">
        <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
        <Node id="4">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
-        <Node id="6">
-         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="4.95"/>
-         <Node id="10" score="Iris-versicolor">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="3.9"/>
-         </Node>
-         <Node id="11" score="Iris-virginica">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="3.9"/>
-         </Node>
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
+        <Node id="6" score="Iris-versicolor">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
         </Node>
-        <Node id="7">
-         <SimplePredicate field="sepal.length" operator="greaterThan" value="4.95"/>
-         <Node id="12" score="Iris-versicolor">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
-         </Node>
-         <Node id="13">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-          <Node id="16" score="Iris-virginica">
-           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
-          </Node>
-          <Node id="17" score="Iris-versicolor">
-           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
-          </Node>
-         </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
         </Node>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
+        <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
         <Node id="8">
          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-         <Node id="14">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.35"/>
-          <Node id="18" score="Iris-virginica">
-           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
+         <Node id="10">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.95"/>
+          <Node id="12" score="Iris-virginica">
+           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.45"/>
           </Node>
-          <Node id="19" score="Iris-versicolor">
-           <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
+          <Node id="13" score="Iris-versicolor">
+           <SimplePredicate field="sepal.length" operator="greaterThan" value="5.45"/>
           </Node>
          </Node>
-         <Node id="15" score="Iris-virginica">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="5.35"/>
+         <Node id="11" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.95"/>
          </Node>
         </Node>
         <Node id="9" score="Iris-virginica">
@@ -380,33 +356,45 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.8"/>
+       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.45"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.width" operator="greaterThan" value="0.8"/>
+       <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
        <Node id="4">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
+        <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.95"/>
         <Node id="6" score="Iris-versicolor">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
+         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.65"/>
         </Node>
         <Node id="7">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
-         <Node id="8">
-          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.75"/>
-          <Node id="10" score="Iris-virginica">
-           <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.65"/>
+         <SimplePredicate field="sepal.length" operator="greaterThan" value="5.65"/>
+         <Node id="10">
+          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
+          <Node id="12">
+           <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.35"/>
+           <Node id="14" score="Iris-versicolor">
+            <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.5"/>
+           </Node>
+           <Node id="15" score="Iris-virginica">
+            <SimplePredicate field="petal.length" operator="greaterThan" value="4.5"/>
+           </Node>
           </Node>
-          <Node id="11" score="Iris-versicolor">
-           <SimplePredicate field="sepal.width" operator="greaterThan" value="2.65"/>
+          <Node id="13" score="Iris-versicolor">
+           <SimplePredicate field="sepal.width" operator="greaterThan" value="2.35"/>
           </Node>
          </Node>
-         <Node id="9" score="Iris-virginica">
-          <SimplePredicate field="sepal.width" operator="greaterThan" value="2.75"/>
+         <Node id="11" score="Iris-virginica">
+          <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
          </Node>
         </Node>
        </Node>
-       <Node id="5" score="Iris-virginica">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
+       <Node id="5">
+        <SimplePredicate field="sepal.width" operator="greaterThan" value="2.95"/>
+        <Node id="8" score="Iris-versicolor">
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.7"/>
+        </Node>
+        <Node id="9" score="Iris-virginica">
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.7"/>
+        </Node>
        </Node>
       </Node>
      </Node>
@@ -425,57 +413,39 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.45"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
        <Node id="4">
         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
         <Node id="6">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
-         <Node id="10">
-          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.55"/>
-          <Node id="16">
-           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="4.95"/>
-           <Node id="18" score="Iris-versicolor">
-            <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.45"/>
-           </Node>
-           <Node id="19" score="Iris-virginica">
-            <SimplePredicate field="sepal.width" operator="greaterThan" value="2.45"/>
-           </Node>
+         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="7.1"/>
+         <Node id="8">
+          <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.3"/>
+          <Node id="10" score="Iris-versicolor">
+           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
           </Node>
-          <Node id="17" score="Iris-versicolor">
-           <SimplePredicate field="sepal.length" operator="greaterThan" value="4.95"/>
+          <Node id="11">
+           <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
+           <Node id="12" score="Iris-virginica">
+            <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.8"/>
+           </Node>
+           <Node id="13" score="Iris-versicolor">
+            <SimplePredicate field="sepal.length" operator="greaterThan" value="5.8"/>
+           </Node>
           </Node>
          </Node>
-         <Node id="11" score="Iris-versicolor">
-          <SimplePredicate field="sepal.width" operator="greaterThan" value="2.55"/>
+         <Node id="9" score="Iris-virginica">
+          <SimplePredicate field="petal.length" operator="greaterThan" value="5.3"/>
          </Node>
         </Node>
-        <Node id="7">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
-         <Node id="12" score="Iris-virginica">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
-         </Node>
-         <Node id="13" score="Iris-versicolor">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
-         </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="sepal.length" operator="greaterThan" value="7.1"/>
         </Node>
        </Node>
-       <Node id="5">
+       <Node id="5" score="Iris-virginica">
         <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
-        <Node id="8">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
-         <Node id="14" score="Iris-virginica">
-          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="3.1"/>
-         </Node>
-         <Node id="15" score="Iris-versicolor">
-          <SimplePredicate field="sepal.width" operator="greaterThan" value="3.1"/>
-         </Node>
-        </Node>
-        <Node id="9" score="Iris-virginica">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
-        </Node>
        </Node>
       </Node>
      </Node>
@@ -499,40 +469,28 @@
       <Node id="3">
        <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
        <Node id="4">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
+        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
         <Node id="6" score="Iris-versicolor">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
         </Node>
-        <Node id="7">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-         <Node id="10" score="Iris-versicolor">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.6"/>
-         </Node>
-         <Node id="11" score="Iris-virginica">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.6"/>
-         </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
         </Node>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
+        <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
         <Node id="8">
          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-         <Node id="12">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
-          <Node id="14" score="Iris-virginica">
-           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.6"/>
-          </Node>
-          <Node id="15" score="Iris-versicolor">
-           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.6"/>
-          </Node>
+         <Node id="10" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
          </Node>
-         <Node id="13">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
-          <Node id="16" score="Iris-versicolor">
-           <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.45"/>
+         <Node id="11">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
+          <Node id="12" score="Iris-versicolor">
+           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.95"/>
           </Node>
-          <Node id="17" score="Iris-virginica">
-           <SimplePredicate field="petal.length" operator="greaterThan" value="5.45"/>
+          <Node id="13" score="Iris-virginica">
+           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.95"/>
           </Node>
          </Node>
         </Node>
@@ -557,44 +515,44 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.75"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.width" operator="greaterThan" value="0.75"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
        <Node id="4">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.7"/>
-        <Node id="6" score="Iris-versicolor">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
-        </Node>
-        <Node id="7">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
-         <Node id="10" score="Iris-virginica">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
+        <Node id="6">
+         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="7"/>
+         <Node id="10" score="Iris-versicolor">
+          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
          </Node>
          <Node id="11">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
-          <Node id="14" score="Iris-versicolor">
-           <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.45"/>
+          <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
+          <Node id="14" score="Iris-virginica">
+           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
           </Node>
-          <Node id="15" score="Iris-virginica">
-           <SimplePredicate field="petal.length" operator="greaterThan" value="5.45"/>
+          <Node id="15" score="Iris-versicolor">
+           <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
           </Node>
          </Node>
+        </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="sepal.length" operator="greaterThan" value="7"/>
         </Node>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="1.7"/>
+        <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
         <Node id="8">
-         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.95"/>
-         <Node id="12" score="Iris-versicolor">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.85"/>
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
+         <Node id="12" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.8"/>
          </Node>
-         <Node id="13" score="Iris-virginica">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.85"/>
+         <Node id="13" score="Iris-versicolor">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="5.8"/>
          </Node>
         </Node>
         <Node id="9" score="Iris-virginica">
-         <SimplePredicate field="sepal.length" operator="greaterThan" value="5.95"/>
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
         </Node>
        </Node>
       </Node>
@@ -614,44 +572,44 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.6"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.length" operator="greaterThan" value="2.6"/>
-       <Node id="4" score="Iris-versicolor">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
+       <Node id="4">
+        <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.05"/>
+        <Node id="6" score="Iris-versicolor">
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.7"/>
+        </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.7"/>
+        </Node>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-        <Node id="6">
-         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="7"/>
-         <Node id="8">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-          <Node id="10" score="Iris-virginica">
-           <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.65"/>
-          </Node>
-          <Node id="11" score="Iris-versicolor">
-           <SimplePredicate field="sepal.width" operator="greaterThan" value="2.65"/>
-          </Node>
+        <SimplePredicate field="sepal.length" operator="greaterThan" value="6.05"/>
+        <Node id="8">
+         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="7.05"/>
+         <Node id="10" score="Iris-versicolor">
+          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
          </Node>
-         <Node id="9">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
-          <Node id="12" score="Iris-virginica">
-           <SimplePredicate field="sepal.width" operator="lessOrEqual" value="3.15"/>
+         <Node id="11">
+          <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
+          <Node id="12">
+           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
+           <Node id="14" score="Iris-virginica">
+            <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
+           </Node>
+           <Node id="15" score="Iris-versicolor">
+            <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
+           </Node>
           </Node>
-          <Node id="13">
-           <SimplePredicate field="sepal.width" operator="greaterThan" value="3.15"/>
-           <Node id="14" score="Iris-versicolor">
-            <SimplePredicate field="petal.width" operator="lessOrEqual" value="2.05"/>
-           </Node>
-           <Node id="15" score="Iris-virginica">
-            <SimplePredicate field="petal.width" operator="greaterThan" value="2.05"/>
-           </Node>
+          <Node id="13" score="Iris-virginica">
+           <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
           </Node>
          </Node>
         </Node>
-        <Node id="7" score="Iris-virginica">
-         <SimplePredicate field="sepal.length" operator="greaterThan" value="7"/>
+        <Node id="9" score="Iris-virginica">
+         <SimplePredicate field="sepal.length" operator="greaterThan" value="7.05"/>
         </Node>
        </Node>
       </Node>
@@ -671,27 +629,39 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.6"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.length" operator="greaterThan" value="2.6"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
        <Node id="4">
-        <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.15"/>
-        <Node id="6" score="Iris-versicolor">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
+        <Node id="6">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.35"/>
+         <Node id="8" score="Iris-versicolor">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.25"/>
+         </Node>
+         <Node id="9">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.25"/>
+          <Node id="10">
+           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.35"/>
+           <Node id="12" score="Iris-versicolor">
+            <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.65"/>
+           </Node>
+           <Node id="13" score="Iris-virginica">
+            <SimplePredicate field="sepal.width" operator="greaterThan" value="2.65"/>
+           </Node>
+          </Node>
+          <Node id="11" score="Iris-versicolor">
+           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.35"/>
+          </Node>
+         </Node>
         </Node>
         <Node id="7" score="Iris-virginica">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
+         <SimplePredicate field="petal.length" operator="greaterThan" value="5.35"/>
         </Node>
        </Node>
-       <Node id="5">
-        <SimplePredicate field="sepal.length" operator="greaterThan" value="6.15"/>
-        <Node id="8" score="Iris-versicolor">
-         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-        </Node>
-        <Node id="9" score="Iris-virginica">
-         <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
-        </Node>
+       <Node id="5" score="Iris-virginica">
+        <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
        </Node>
       </Node>
      </Node>
@@ -714,40 +684,22 @@
       </Node>
       <Node id="3">
        <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
-       <Node id="4">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-        <Node id="6" score="Iris-virginica">
-         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="4.95"/>
-        </Node>
-        <Node id="7">
-         <SimplePredicate field="sepal.length" operator="greaterThan" value="4.95"/>
-         <Node id="10" score="Iris-versicolor">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
-         </Node>
-         <Node id="11">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
-          <Node id="12">
-           <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.9"/>
-           <Node id="14" score="Iris-virginica">
-            <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
-           </Node>
-           <Node id="15" score="Iris-versicolor">
-            <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
-           </Node>
-          </Node>
-          <Node id="13" score="Iris-versicolor">
-           <SimplePredicate field="sepal.width" operator="greaterThan" value="2.9"/>
-          </Node>
-         </Node>
-        </Node>
+       <Node id="4" score="Iris-versicolor">
+        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
-        <Node id="8" score="Iris-versicolor">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
+        <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
+        <Node id="6">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.05"/>
+         <Node id="8" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
+         </Node>
+         <Node id="9" score="Iris-versicolor">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
+         </Node>
         </Node>
-        <Node id="9" score="Iris-virginica">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="5.05"/>
         </Node>
        </Node>
       </Node>
@@ -766,53 +718,35 @@
      </MiningSchema>
      <Node id="1">
       <True/>
-      <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.8"/>
-      </Node>
-      <Node id="3">
-       <SimplePredicate field="petal.width" operator="greaterThan" value="0.8"/>
-       <Node id="4">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
-        <Node id="6">
-         <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.65"/>
-         <Node id="10" score="Iris-versicolor">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.8"/>
-         </Node>
-         <Node id="11" score="Iris-virginica">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="4.8"/>
-         </Node>
-        </Node>
-        <Node id="7" score="Iris-versicolor">
-         <SimplePredicate field="sepal.width" operator="greaterThan" value="2.65"/>
-        </Node>
+      <Node id="2">
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
+       <Node id="4" score="Iris-setosa">
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
-        <Node id="8">
-         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-         <Node id="12" score="Iris-virginica">
-          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.75"/>
-         </Node>
-         <Node id="13" score="Iris-versicolor">
-          <SimplePredicate field="sepal.width" operator="greaterThan" value="2.75"/>
-         </Node>
+        <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
+        <Node id="6" score="Iris-versicolor">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
         </Node>
-        <Node id="9">
-         <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
-         <Node id="14">
-          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6"/>
-          <Node id="16" score="Iris-versicolor">
-           <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.9"/>
+        <Node id="7">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
+         <Node id="8">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.15"/>
+          <Node id="10" score="Iris-virginica">
+           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
           </Node>
-          <Node id="17" score="Iris-virginica">
-           <SimplePredicate field="petal.length" operator="greaterThan" value="4.9"/>
+          <Node id="11" score="Iris-versicolor">
+           <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
           </Node>
          </Node>
-         <Node id="15" score="Iris-virginica">
-          <SimplePredicate field="sepal.length" operator="greaterThan" value="6"/>
+         <Node id="9" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.15"/>
          </Node>
         </Node>
        </Node>
+      </Node>
+      <Node id="3" score="Iris-virginica">
+       <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
       </Node>
      </Node>
     </TreeModel>
@@ -829,57 +763,45 @@
      </MiningSchema>
      <Node id="1">
       <True/>
-      <Node id="2">
-       <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.45"/>
-       <Node id="4" score="Iris-setosa">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.75"/>
-       </Node>
-       <Node id="5" score="Iris-versicolor">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="0.75"/>
-       </Node>
+      <Node id="2" score="Iris-setosa">
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="sepal.length" operator="greaterThan" value="5.45"/>
-       <Node id="6">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
-        <Node id="8" score="Iris-setosa">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.6"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
+       <Node id="4">
+        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
+        <Node id="6" score="Iris-versicolor">
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
         </Node>
-        <Node id="9">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="2.6"/>
-         <Node id="12" score="Iris-versicolor">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.7"/>
-         </Node>
-         <Node id="13">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.7"/>
-          <Node id="16" score="Iris-versicolor">
-           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.05"/>
-          </Node>
-          <Node id="17" score="Iris-virginica">
-           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.05"/>
-          </Node>
-         </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
         </Node>
        </Node>
-       <Node id="7">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
-        <Node id="10">
-         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
-         <Node id="14">
-          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.6"/>
-          <Node id="18" score="Iris-versicolor">
+       <Node id="5">
+        <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
+        <Node id="8">
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
+         <Node id="10">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="7.05"/>
+          <Node id="12" score="Iris-versicolor">
            <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
           </Node>
-          <Node id="19" score="Iris-virginica">
+          <Node id="13">
            <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
+           <Node id="14" score="Iris-virginica">
+            <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
+           </Node>
+           <Node id="15" score="Iris-versicolor">
+            <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
+           </Node>
           </Node>
          </Node>
-         <Node id="15" score="Iris-versicolor">
-          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.6"/>
+         <Node id="11" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="7.05"/>
          </Node>
         </Node>
-        <Node id="11" score="Iris-virginica">
-         <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
+        <Node id="9" score="Iris-virginica">
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
         </Node>
        </Node>
       </Node>
@@ -899,27 +821,33 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.8"/>
+       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.45"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.width" operator="greaterThan" value="0.8"/>
+       <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
        <Node id="4">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
-        <Node id="6">
-         <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.65"/>
-         <Node id="8" score="Iris-versicolor">
+        <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.75"/>
+        <Node id="6" score="Iris-versicolor">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.45"/>
+        </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.45"/>
+        </Node>
+       </Node>
+       <Node id="5">
+        <SimplePredicate field="sepal.length" operator="greaterThan" value="5.75"/>
+        <Node id="8">
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
+         <Node id="10" score="Iris-versicolor">
           <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
          </Node>
-         <Node id="9" score="Iris-virginica">
+         <Node id="11" score="Iris-virginica">
           <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
          </Node>
         </Node>
-        <Node id="7" score="Iris-versicolor">
-         <SimplePredicate field="sepal.width" operator="greaterThan" value="2.65"/>
+        <Node id="9" score="Iris-virginica">
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
         </Node>
-       </Node>
-       <Node id="5" score="Iris-virginica">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
        </Node>
       </Node>
      </Node>
@@ -938,70 +866,34 @@
      <Node id="1">
       <True/>
       <Node id="2">
-       <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.45"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
        <Node id="4" score="Iris-setosa">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.8"/>
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
        </Node>
-       <Node id="5" score="Iris-versicolor">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="0.8"/>
+       <Node id="5">
+        <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
+        <Node id="6" score="Iris-versicolor">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
+        </Node>
+        <Node id="7">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
+         <Node id="8" score="Iris-virginica">
+          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.65"/>
+         </Node>
+         <Node id="9">
+          <SimplePredicate field="sepal.width" operator="greaterThan" value="2.65"/>
+          <Node id="10" score="Iris-versicolor">
+           <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.75"/>
+          </Node>
+          <Node id="11" score="Iris-virginica">
+           <SimplePredicate field="sepal.width" operator="greaterThan" value="2.75"/>
+          </Node>
+         </Node>
+        </Node>
        </Node>
       </Node>
-      <Node id="3">
-       <SimplePredicate field="sepal.length" operator="greaterThan" value="5.45"/>
-       <Node id="6">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-        <Node id="8">
-         <SimplePredicate field="sepal.width" operator="lessOrEqual" value="3.45"/>
-         <Node id="12" score="Iris-virginica">
-          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.25"/>
-         </Node>
-         <Node id="13">
-          <SimplePredicate field="sepal.width" operator="greaterThan" value="2.25"/>
-          <Node id="14" score="Iris-versicolor">
-           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.45"/>
-          </Node>
-          <Node id="15">
-           <SimplePredicate field="petal.width" operator="greaterThan" value="1.45"/>
-           <Node id="16">
-            <SimplePredicate field="sepal.width" operator="lessOrEqual" value="3.05"/>
-            <Node id="18" score="Iris-versicolor">
-             <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.75"/>
-            </Node>
-            <Node id="19">
-             <SimplePredicate field="sepal.width" operator="greaterThan" value="2.75"/>
-             <Node id="20">
-              <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
-              <Node id="22" score="Iris-versicolor">
-               <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
-              </Node>
-              <Node id="23" score="Iris-virginica">
-               <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
-              </Node>
-             </Node>
-             <Node id="21" score="Iris-versicolor">
-              <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
-             </Node>
-            </Node>
-           </Node>
-           <Node id="17" score="Iris-versicolor">
-            <SimplePredicate field="sepal.width" operator="greaterThan" value="3.05"/>
-           </Node>
-          </Node>
-         </Node>
-        </Node>
-        <Node id="9" score="Iris-setosa">
-         <SimplePredicate field="sepal.width" operator="greaterThan" value="3.45"/>
-        </Node>
-       </Node>
-       <Node id="7">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
-        <Node id="10" score="Iris-versicolor">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
-        </Node>
-        <Node id="11" score="Iris-virginica">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
-        </Node>
-       </Node>
+      <Node id="3" score="Iris-virginica">
+       <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
       </Node>
      </Node>
     </TreeModel>
@@ -1018,70 +910,34 @@
      </MiningSchema>
      <Node id="1">
       <True/>
-      <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.8"/>
-      </Node>
-      <Node id="3">
-       <SimplePredicate field="petal.width" operator="greaterThan" value="0.8"/>
-       <Node id="4" score="Iris-versicolor">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
+      <Node id="2">
+       <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.85"/>
+       <Node id="4" score="Iris-setosa">
+        <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.45"/>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-        <Node id="6">
+        <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
+        <Node id="8" score="Iris-versicolor">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
+        </Node>
+        <Node id="9" score="Iris-virginica">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
+        </Node>
+       </Node>
+      </Node>
+      <Node id="3">
+       <SimplePredicate field="sepal.length" operator="greaterThan" value="5.85"/>
+       <Node id="6">
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
+        <Node id="10" score="Iris-versicolor">
          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
-         <Node id="8">
-          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.25"/>
-          <Node id="12" score="Iris-versicolor">
-           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6"/>
-          </Node>
-          <Node id="13" score="Iris-virginica">
-           <SimplePredicate field="sepal.length" operator="greaterThan" value="6"/>
-          </Node>
-         </Node>
-         <Node id="9" score="Iris-versicolor">
-          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.25"/>
-         </Node>
         </Node>
-        <Node id="7">
+        <Node id="11" score="Iris-virginica">
          <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
-         <Node id="10">
-          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="3.05"/>
-          <Node id="14" score="Iris-virginica">
-           <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.65"/>
-          </Node>
-          <Node id="15">
-           <SimplePredicate field="sepal.width" operator="greaterThan" value="2.65"/>
-           <Node id="16">
-            <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-            <Node id="18">
-             <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.95"/>
-             <Node id="20" score="Iris-versicolor">
-              <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.75"/>
-             </Node>
-             <Node id="21">
-              <SimplePredicate field="sepal.width" operator="greaterThan" value="2.75"/>
-              <Node id="22" score="Iris-virginica">
-               <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.9"/>
-              </Node>
-              <Node id="23" score="Iris-versicolor">
-               <SimplePredicate field="sepal.width" operator="greaterThan" value="2.9"/>
-              </Node>
-             </Node>
-            </Node>
-            <Node id="19" score="Iris-virginica">
-             <SimplePredicate field="sepal.length" operator="greaterThan" value="6.95"/>
-            </Node>
-           </Node>
-           <Node id="17" score="Iris-virginica">
-            <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
-           </Node>
-          </Node>
-         </Node>
-         <Node id="11" score="Iris-virginica">
-          <SimplePredicate field="sepal.width" operator="greaterThan" value="3.05"/>
-         </Node>
         </Node>
+       </Node>
+       <Node id="7" score="Iris-virginica">
+        <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
        </Node>
       </Node>
      </Node>
@@ -1100,50 +956,50 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.8"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.width" operator="greaterThan" value="0.8"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
        <Node id="4">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
+        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.8"/>
         <Node id="6" score="Iris-versicolor">
-         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.45"/>
         </Node>
-        <Node id="7" score="Iris-virginica">
-         <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
+        <Node id="7">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.45"/>
+         <Node id="10" score="Iris-virginica">
+          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.65"/>
+         </Node>
+         <Node id="11" score="Iris-versicolor">
+          <SimplePredicate field="sepal.width" operator="greaterThan" value="2.65"/>
+         </Node>
         </Node>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-        <Node id="8" score="Iris-versicolor">
-         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.45"/>
+        <SimplePredicate field="petal.length" operator="greaterThan" value="4.8"/>
+        <Node id="8">
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
+         <Node id="12" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.2"/>
+         </Node>
+         <Node id="13">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.2"/>
+          <Node id="14">
+           <SimplePredicate field="sepal.width" operator="lessOrEqual" value="3.05"/>
+           <Node id="16" score="Iris-versicolor">
+            <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.05"/>
+           </Node>
+           <Node id="17" score="Iris-virginica">
+            <SimplePredicate field="petal.length" operator="greaterThan" value="5.05"/>
+           </Node>
+          </Node>
+          <Node id="15" score="Iris-versicolor">
+           <SimplePredicate field="sepal.width" operator="greaterThan" value="3.05"/>
+          </Node>
+         </Node>
         </Node>
-        <Node id="9">
-         <SimplePredicate field="petal.width" operator="greaterThan" value="1.45"/>
-         <Node id="10">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-          <Node id="12" score="Iris-virginica">
-           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
-          </Node>
-          <Node id="13">
-           <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
-           <Node id="14">
-            <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
-            <Node id="16" score="Iris-versicolor">
-             <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.45"/>
-            </Node>
-            <Node id="17" score="Iris-virginica">
-             <SimplePredicate field="petal.length" operator="greaterThan" value="5.45"/>
-            </Node>
-           </Node>
-           <Node id="15" score="Iris-versicolor">
-            <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
-           </Node>
-          </Node>
-         </Node>
-         <Node id="11" score="Iris-virginica">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
-         </Node>
+        <Node id="9" score="Iris-virginica">
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
         </Node>
        </Node>
       </Node>
@@ -1163,38 +1019,50 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.75"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.width" operator="greaterThan" value="0.75"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
        <Node id="4">
-        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.7"/>
+        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
         <Node id="6" score="Iris-versicolor">
-         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.05"/>
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
         </Node>
-        <Node id="7">
-         <SimplePredicate field="sepal.length" operator="greaterThan" value="6.05"/>
-         <Node id="10" score="Iris-versicolor">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="5.25"/>
-         </Node>
-         <Node id="11" score="Iris-virginica">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="5.25"/>
-         </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
         </Node>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.width" operator="greaterThan" value="1.7"/>
+        <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
         <Node id="8">
-         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="5.95"/>
-         <Node id="12" score="Iris-virginica">
-          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="3.1"/>
+         <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
+         <Node id="10">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="7"/>
+          <Node id="12">
+           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
+           <Node id="14">
+            <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.05"/>
+            <Node id="16" score="Iris-virginica">
+             <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
+            </Node>
+            <Node id="17" score="Iris-versicolor">
+             <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
+            </Node>
+           </Node>
+           <Node id="15" score="Iris-virginica">
+            <SimplePredicate field="sepal.length" operator="greaterThan" value="6.05"/>
+           </Node>
+          </Node>
+          <Node id="13" score="Iris-versicolor">
+           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
+          </Node>
          </Node>
-         <Node id="13" score="Iris-versicolor">
-          <SimplePredicate field="sepal.width" operator="greaterThan" value="3.1"/>
+         <Node id="11" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="7"/>
          </Node>
         </Node>
         <Node id="9" score="Iris-virginica">
-         <SimplePredicate field="sepal.length" operator="greaterThan" value="5.95"/>
+         <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
         </Node>
        </Node>
       </Node>
@@ -1214,45 +1082,21 @@
      <Node id="1">
       <True/>
       <Node id="2" score="Iris-setosa">
-       <SimplePredicate field="petal.length" operator="lessOrEqual" value="2.45"/>
+       <SimplePredicate field="petal.width" operator="lessOrEqual" value="0.7"/>
       </Node>
       <Node id="3">
-       <SimplePredicate field="petal.length" operator="greaterThan" value="2.45"/>
+       <SimplePredicate field="petal.width" operator="greaterThan" value="0.7"/>
        <Node id="4">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
-        <Node id="6">
-         <SimplePredicate field="sepal.length" operator="lessOrEqual" value="4.95"/>
-         <Node id="8" score="Iris-versicolor">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="3.9"/>
-         </Node>
-         <Node id="9" score="Iris-virginica">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="3.9"/>
-         </Node>
+        <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.7"/>
+        <Node id="6" score="Iris-versicolor">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
         </Node>
-        <Node id="7">
-         <SimplePredicate field="sepal.length" operator="greaterThan" value="4.95"/>
-         <Node id="10" score="Iris-versicolor">
-          <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
-         </Node>
-         <Node id="11">
-          <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-          <Node id="12" score="Iris-versicolor">
-           <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
-          </Node>
-          <Node id="13">
-           <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
-           <Node id="14" score="Iris-versicolor">
-            <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.05"/>
-           </Node>
-           <Node id="15" score="Iris-virginica">
-            <SimplePredicate field="sepal.length" operator="greaterThan" value="6.05"/>
-           </Node>
-          </Node>
-         </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
         </Node>
        </Node>
        <Node id="5" score="Iris-virginica">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
+        <SimplePredicate field="petal.width" operator="greaterThan" value="1.7"/>
        </Node>
       </Node>
      </Node>
@@ -1275,70 +1119,22 @@
       </Node>
       <Node id="3">
        <SimplePredicate field="petal.length" operator="greaterThan" value="2.35"/>
-       <Node id="4">
-        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.85"/>
-        <Node id="6">
-         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
-         <Node id="10" score="Iris-versicolor">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
-         </Node>
-         <Node id="11" score="Iris-virginica">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
-         </Node>
-        </Node>
-        <Node id="7">
-         <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
-         <Node id="12" score="Iris-virginica">
-          <SimplePredicate field="sepal.width" operator="lessOrEqual" value="3.1"/>
-         </Node>
-         <Node id="13" score="Iris-versicolor">
-          <SimplePredicate field="sepal.width" operator="greaterThan" value="3.1"/>
-         </Node>
-        </Node>
+       <Node id="4" score="Iris-versicolor">
+        <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.75"/>
        </Node>
        <Node id="5">
-        <SimplePredicate field="petal.length" operator="greaterThan" value="4.85"/>
-        <Node id="8">
-         <SimplePredicate field="sepal.width" operator="lessOrEqual" value="2.75"/>
-         <Node id="14">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.7"/>
-          <Node id="18">
-           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.15"/>
-           <Node id="22" score="Iris-virginica">
-            <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.55"/>
-           </Node>
-           <Node id="23" score="Iris-versicolor">
-            <SimplePredicate field="petal.width" operator="greaterThan" value="1.55"/>
-           </Node>
-          </Node>
-          <Node id="19" score="Iris-versicolor">
-           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.15"/>
-          </Node>
+        <SimplePredicate field="petal.length" operator="greaterThan" value="4.75"/>
+        <Node id="6">
+         <SimplePredicate field="petal.length" operator="lessOrEqual" value="4.95"/>
+         <Node id="8" score="Iris-virginica">
+          <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
          </Node>
-         <Node id="15" score="Iris-virginica">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.7"/>
+         <Node id="9" score="Iris-versicolor">
+          <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
          </Node>
         </Node>
-        <Node id="9">
-         <SimplePredicate field="sepal.width" operator="greaterThan" value="2.75"/>
-         <Node id="16">
-          <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.75"/>
-          <Node id="20" score="Iris-virginica">
-           <SimplePredicate field="sepal.length" operator="lessOrEqual" value="6.5"/>
-          </Node>
-          <Node id="21">
-           <SimplePredicate field="sepal.length" operator="greaterThan" value="6.5"/>
-           <Node id="24" score="Iris-virginica">
-            <SimplePredicate field="petal.width" operator="lessOrEqual" value="1.65"/>
-           </Node>
-           <Node id="25" score="Iris-versicolor">
-            <SimplePredicate field="petal.width" operator="greaterThan" value="1.65"/>
-           </Node>
-          </Node>
-         </Node>
-         <Node id="17" score="Iris-virginica">
-          <SimplePredicate field="petal.width" operator="greaterThan" value="1.75"/>
-         </Node>
+        <Node id="7" score="Iris-virginica">
+         <SimplePredicate field="petal.length" operator="greaterThan" value="4.95"/>
         </Node>
        </Node>
       </Node>

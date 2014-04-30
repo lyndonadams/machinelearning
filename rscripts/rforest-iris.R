@@ -1,3 +1,5 @@
+# Structured learning
+require(pmml)  # for storing the model in xml
 library(randomForest)
 
 # Load the data and keep the column headers
@@ -16,17 +18,18 @@ iris <- randomRows( iris, sizeOfData)
 
 # Now split the dataset in to train 20%  and test 33%
 indexes <- sample(1:sizeOfData, size=0.2*sizeOfData)
-test <- randomRows( iris, sizeOfData)
-train <- randomRows( iris, sizeOfData)
-
+test <- iris[indexes,]
+train <- iris[-indexes,]
 
 # Remove the species label from the data set 
 iris.use = subset( train,select=-species)
 
 
-fit <- randomForest(species ~ sepal.length + sepal.width + petal.length + petal.width ,   data=train, ntree=680)
+fit <- randomForest(species ~ sepal.length + sepal.width + petal.length + petal.width ,   data=train, ntree=22)
 print(fit) # view results 
 importance(fit) # importance of each predictor
+
+fit$confusion
 
 # Predict
 p <- predict( fit, iris.use[1,] )
