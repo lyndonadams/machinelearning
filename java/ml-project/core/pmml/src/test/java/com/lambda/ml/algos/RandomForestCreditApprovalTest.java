@@ -107,6 +107,7 @@ public class RandomForestCreditApprovalTest {
                 String[] tokens = line.split( cvsSplitBy );
 
                 // Extract required features from csv row
+                //"x",1.625,"t","t",1,500
                 Object[] pfeatures = {
                         tokens[0],
                         Double.valueOf( tokens[1] ),
