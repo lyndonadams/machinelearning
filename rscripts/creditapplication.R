@@ -19,7 +19,6 @@ creditapps$V15 <- as.numeric( creditapps$V15)
 creditapps$V14 <- as.character( creditapps$V14)
 
 creditapps$V16 <- as.factor( creditapps$V16)
-class( creditapps$V16)
 
 # select random rows function
 randomRows = function(df,n){
@@ -34,17 +33,18 @@ indexes <- sample(1:sizeOfData, size=0.6*sizeOfData)
 test <- creditapps[indexes,]
 train <- creditapps[-indexes,]
 
-#fit <- randomForest(V16 ~ V1 + V2 + V3 + V4 + V5 +V6 +V7 +V8 +V9 +V10 +V11  +V12 +V13 +V15,   data=train, ntree=21)
-fit <- randomForest(V16 ~ V6 +V8 +V9 +V10 +V11 +V15, data=train, importance=TRUE, proximity=TRUE, ntree=35, nodesize=2)
+# Train the RF using selected set of features for 35 interal trees to grow
+fit <- randomForest(V16 ~ V6 +V8 +V9 +V10 +V11 +V15, data=train, ntree=35 )
 test <- subset(test, select = -c(V1,V2,V3, V4, V5, V7, V12, V13, V14 ) )
 
+# view results 
+print(fit) 
 
-print(fit) # view results 
-importance(fit) # importance of each predictor
+# importance of each predictor
+importance(fit) 
 
+# Variable importance plot
 varImpPlot(fit)
-
-print(fit$confusion)
 
 # Predict
 p <- predict( fit, test )

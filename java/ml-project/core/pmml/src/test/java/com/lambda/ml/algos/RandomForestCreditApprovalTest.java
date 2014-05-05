@@ -99,6 +99,7 @@ public class RandomForestCreditApprovalTest {
             long startTime = System.currentTimeMillis();
             int predications = 0;
 
+            int correct =0, incorrect =0;
 
             // For each CSV line perform a predict.
             while ((line = br.readLine()) != null) {
@@ -108,7 +109,7 @@ public class RandomForestCreditApprovalTest {
 
                 // Extract required features from csv row
                 //"x",1.625,"t","t",1,500
-                Object[] pfeatures = {
+                Object[] rfeatures = {
                         tokens[0],
                         Double.valueOf( tokens[1] ),
                         tokens[2],
@@ -118,25 +119,38 @@ public class RandomForestCreditApprovalTest {
                 };
 
                 // Extract the actual target label
-                String expectedSpecies = tokens[6];
+                String expectedApproval = tokens[6];
 
                 // Build feature set
-                features = JPMMLUtils.buildFeatureSet( evaluator, requiredModelFeatures, pfeatures);
+                features = JPMMLUtils.buildFeatureSet( evaluator, requiredModelFeatures, rfeatures);
 
                 // Execute the prediction
-                Map<FieldName, ?> results = evaluator.evaluate( features );
+                Map<FieldName, ?> result = evaluator.evaluate( features );
 
                 // Get the set of prediction responses
-                DefaultClassificationMap<String> predicatedLabel = (DefaultClassificationMap)results.get( evaluator.getTargetField());
+                Double yesProbability = (Double)result.get(new FieldName("Probability_YES"));
+                Double noProbability = (Double)result.get(new FieldName("Probability_NO"));
 
+                String yN = "CORRECT";
+                if( yesProbability > noProbability){
+                    if( !"YES".equals( expectedApproval )){
+                        yN = "INCORRECT";
+                        incorrect++;
+                    }else {
+                        correct++;
+                    }
+                } else {
+                    if( !"NO".equals( expectedApproval )){
+                        yN = "INCORRECT";
+                        incorrect++;
+                    }else {
+                        correct++;
+                    }
+                }
 
-               System.out.println("\nPredication");
-               for(String key : predicatedLabel.keySet() ){
-                   System.out.println(String.format("Credit Approval  [ %s --> %f ]  - Expected answer [ %s ]", key, predicatedLabel.getProbability(key), expectedSpecies ));
-               }
-
+                System.out.println(String.format("[%s] Prediction: YES(%f) NO(%f) : Expected [%s]", yN, yesProbability, noProbability, expectedApproval ));
             }
-            System.out.println(String.format("Predicted %d items in %dms", predications, System.currentTimeMillis() - startTime));
+            System.out.println(String.format("Predicted %d items in %dms. Correct[ %d ] Incorrect [ %d ]", predications, System.currentTimeMillis() - startTime, correct, incorrect));
 
         }
     }
