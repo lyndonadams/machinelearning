@@ -25,7 +25,7 @@ train <- iris[-indexes,]
 iris.use = subset( train,select=-species)
 
 
-fit <- randomForest(species ~ sepal.length + sepal.width + petal.length + petal.width ,   data=train, ntree=22)
+fit <- randomForest(species ~ sepal.length + sepal.width + petal.length + petal.width ,   data=train, ntree=45)
 print(fit) # view results 
 importance(fit) # importance of each predictor
 

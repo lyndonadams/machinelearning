@@ -38,8 +38,8 @@ indexes <- sample(1:sizeOfData, size=0.5*sizeOfData)
 test <- iris[indexes,]
 train <- iris[-indexes,]
 
-u <-unique( train$species )
-
+library(sqldf);
+sqldf("select species, count(distinct species) from test")
 
 
 # Assign training labels as factors

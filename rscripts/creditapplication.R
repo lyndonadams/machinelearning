@@ -46,6 +46,7 @@ importance(fit)
 # Variable importance plot
 varImpPlot(fit)
 
+
 # Predict
 p <- predict( fit, test )
 summary( p)
@@ -54,6 +55,7 @@ print( test[1,])
 
 #traceback()
 
+# Write the model to pmml file
 localfilename <- "../models/creditapp-randomforest-prediction.xml"
 saveXML(pmml( fit, model.name = "CreditAppPredictionRForest", app.name = "RR/PMML", dataset = dataset) , file = localfilename)
 
