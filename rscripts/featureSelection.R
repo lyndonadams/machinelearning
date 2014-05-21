@@ -12,6 +12,7 @@ randomRows = function(df,n){
   return(df[sample(nrow(df),n),])
 }
 
+
 # Type the columns
 creditapps$V2 <- as.numeric( creditapps$V2)
 creditapps$V3 <- as.numeric( creditapps$V3)
@@ -22,8 +23,8 @@ creditapps$V14 <- as.numeric( creditapps$V14)
 
 # ENUM
 creditapps$V1 <- as.factor( creditapps$V1)
-creditapps$V16 <- as.factor( creditapps$V16)
 creditapps$V16 <- ifelse(creditapps$V16 == "+", "YES", "NO")
+creditapps$V16 <- as.factor( creditapps$V16)
 
 # Mix up the table using the random function
 creditapps <- randomRows( creditapps, sizeOfData)
@@ -36,7 +37,7 @@ train <- creditapps[indexes,]
 # Set features and target variable 
 features <- c( "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15")
 features <- as.vector( features )
-target=as.factor( train[["V16"]] )
+target= train[["V16"]] 
 
 
 bestFeatures <- c()
@@ -46,16 +47,18 @@ bestRandomForestTrees <- 0
 errMeasure <- c()
 attrThreshold <- 2
 
+set.seed(1234)
+
 # Loop through all features we have
-for (n in 1:15 ){
+for (n in 1:15){
   
   # Set training features
   X <- train[ features ]
   trees <- 5
   prevErr <- 100
-  for(i in 1:500){
+  for(i in 1:3){
     # Train the RF using selected set of features for N interal random trees
-    fit <- randomForest(x=X, y=target, ntree=35, scale=FALSE)
+    fit <- randomForest(x=X, y=target, ntree=35,proximity=TRUE )
     
     currErr <- sum( data.frame(fit$confusion)["class.error"] )/2
     if(  currErr < prevErr ){
@@ -80,11 +83,10 @@ for (n in 1:15 ){
     keepAttr <- ifelse( imp$MeanDecreaseGini > attrThreshold, TRUE, FALSE)
     features <- features[ keepAttr ]
 
-    print("Have a new best model")
     print(bestFit)
   }
   
-  # Increase threshold
+  # Increase threshold  
   attrThreshold <- attrThreshold + 1
 }
 
@@ -96,8 +98,20 @@ print(bestFit)
 importance(bestFit)
 varImpPlot(bestFit)
 
-#plot( predict(bestFit), target)
+plot( predict(bestFit), target)
+bestFit$classes
+bestFit$test
+
+models<- c()
+for (n in 1:15){
+  fit <- randomForest(V16 ~ V2+V3+V6+V7+V8+V9+V10+V11+V14+V15, data=train, ntree=35 )
+  #models <- append(models, fit, 1)
+}
+
+class( models )
+ff <- do.call(combine,models)
 
 # Write the model to pmml file
-#localfilename <- "../models/creditapp-randomforest-prediction.xml"
-#saveXML(pmml( fit, model.name = "CreditAppPredictionRForest", app.name = "RR/PMML", dataset = dataset) , file = localfilename)
+localfilename <- "../models/creditapp-randomforest-prediction.xml"
+pmmlDoc <- pmml( fit, model.name = "CreditAppPredictionRForest", app.name = "RR/PMML", dataset = dataset)
+saveXML( pmmlDoc,  file = localfilename)
