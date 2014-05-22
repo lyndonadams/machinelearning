@@ -54,11 +54,11 @@ for (n in 1:15){
   
   # Set training features
   X <- train[ features ]
-  trees <- 5
+  trees <- 35
   prevErr <- 100
   for(i in 1:3){
     # Train the RF using selected set of features for N interal random trees
-    fit <- randomForest(x=X, y=target, ntree=35,proximity=TRUE )
+    fit <- randomForest(x=X, y=target, ntree=trees,proximity=TRUE )
     
     currErr <- sum( data.frame(fit$confusion)["class.error"] )/2
     if(  currErr < prevErr ){
@@ -83,6 +83,7 @@ for (n in 1:15){
     keepAttr <- ifelse( imp$MeanDecreaseGini > attrThreshold, TRUE, FALSE)
     features <- features[ keepAttr ]
 
+    print( features)
     print(bestFit)
   }
   
@@ -99,19 +100,8 @@ importance(bestFit)
 varImpPlot(bestFit)
 
 plot( predict(bestFit), target)
-bestFit$classes
-bestFit$test
-
-models<- c()
-for (n in 1:15){
-  fit <- randomForest(V16 ~ V2+V3+V6+V7+V8+V9+V10+V11+V14+V15, data=train, ntree=35 )
-  #models <- append(models, fit, 1)
-}
-
-class( models )
-ff <- do.call(combine,models)
 
 # Write the model to pmml file
 localfilename <- "../models/creditapp-randomforest-prediction.xml"
-pmmlDoc <- pmml( fit, model.name = "CreditAppPredictionRForest", app.name = "RR/PMML", dataset = dataset)
+pmmlDoc <- pmml( bestFit, model.name = "CreditAppPredictionRForest", app.name = "RR/PMML", dataset = dataset)
 saveXML( pmmlDoc,  file = localfilename)
