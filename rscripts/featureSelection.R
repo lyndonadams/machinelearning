@@ -35,19 +35,16 @@ test <- creditapps[-indexes,]
 train <- creditapps[indexes,]
 
 # Set features and target variable 
-features <- c( "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15")
+features <- c( "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15","V16")
 features <- as.vector( features )
-target= train[["V16"]] 
-
+target <- train[["V16"]] 
 
 bestFeatures <- c()
 bestFeatureErr <- 1
 bestRandomForestTrees <- 0
 
 errMeasure <- c()
-attrThreshold <- 2
-
-set.seed(1234)
+attrThreshold <- 4
 
 # Loop through all features we have
 for (n in 1:15){
@@ -56,10 +53,9 @@ for (n in 1:15){
   X <- train[ features ]
   trees <- 35
   prevErr <- 100
-  for(i in 1:3){
+  for(i in 1:10){
     # Train the RF using selected set of features for N interal random trees
-    fit <- randomForest(x=X, y=target, ntree=trees,proximity=TRUE )
-    
+    fit <- randomForest(V16 ~ ., data=train[,features], ntree=trees)
     currErr <- sum( data.frame(fit$confusion)["class.error"] )/2
     if(  currErr < prevErr ){
       bestTree <- fit
@@ -82,10 +78,14 @@ for (n in 1:15){
     imp <- data.frame( bestFit$importance )
     keepAttr <- ifelse( imp$MeanDecreaseGini > attrThreshold, TRUE, FALSE)
     features <- features[ keepAttr ]
-
-    print( features)
     print(bestFit)
+    print( features)
   }
+  
+  # Add back in the target variable
+  if( ! "V16" %in% features){
+    features <- append( features, "V16")
+  } 
   
   # Increase threshold  
   attrThreshold <- attrThreshold + 1
@@ -103,5 +103,11 @@ plot( predict(bestFit), target)
 
 # Write the model to pmml file
 localfilename <- "../models/creditapp-randomforest-prediction.xml"
-pmmlDoc <- pmml( bestFit, model.name = "CreditAppPredictionRForest", app.name = "RR/PMML", dataset = dataset)
+pmmlDoc <- pmml( bestTree, model.name = "CreditAppPredictionRForest", app.name = "RR/PMML", dataset = dataset)
+
+# Print out the resulting XML for debugging
+#cat(toString(pmmlDoc))
+
 saveXML( pmmlDoc,  file = localfilename)
+
+
