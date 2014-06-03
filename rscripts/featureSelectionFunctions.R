@@ -33,37 +33,36 @@ trainingSet <- creditapps[indexes,]
 
 # Set target variable 
 target <- trainingSet[["V16"]] 
+testingTarget <- testingSet[["V16"]]
 
-
+# Set algorithm parameters
 formula <- "V16 ~." 
 attrThreshold <- 4
 iterations <- 10
-initTreeCount <- 35
-treeCountStep <- 5
+initTreeCount <- 55
+treeCountStep <- 25
 
 bestFittingTree <- sqBestFeatureModel.rf( formula,  trainingSet, "V16", iterations, initTreeCount, treeCountStep, attrThreshold )
 
 tree <- bestFittingTree$tree
 errors <- bestFittingTree$errors
+
 # Output error plot
 plot( errors)
 
 # importance of each predictor
 print(bestFittingTree)
-importance(bestFittingTree$tree )
+importance( tree )
 varImpPlot(bestFittingTree$tree)
 
-plot( predict(bestFittingTree$tree), target)
+plot(predict( object=tree, newdata=testingSet), testingTarget)
 
 # Write the model to pmml file
 localfilename <- "../models/creditapp-randomforest-prediction.xml"
-pmmlDoc <- pmml( bestTree, model.name = "CreditAppPredictionRForest", app.name = "RR/PMML", dataset = dataset)
+#pmmlDoc <- pmml( tree, model.name = "CreditAppPredictionRForest", app.name = "RR/PMML", dataset = dataset)
 
 # Print out the resulting XML for debugging
 #cat(toString(pmmlDoc))
 
+# Save the resulting tree to PMML
 #saveXML( pmmlDoc,  file = localfilename)
-
-
-
-

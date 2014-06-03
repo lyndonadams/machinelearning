@@ -48,8 +48,8 @@ sqBestFeatureModel.rf <- function(modelFormula, data, targetVar, maxIterations, 
       imp <- data.frame( bestFit$importance )
       keepAttr <- ifelse( imp$MeanDecreaseGini > attrThreshold, TRUE, FALSE)
       features <- features[ keepAttr ]
-      print(bestFit)
-      print( features)
+      #print(bestFit)
+      #print( features)
     }
     
     # Add back in the target variable
